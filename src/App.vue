@@ -1,32 +1,26 @@
-<!-- option api -->
+<!-- composition api -->
 
-<script>
-export default{
-  data(){
-    return{
- name:'Anupa Baral',
- status:'pending',
- tasks:['task 1','task 2','task 3'],
- link:'https://google.com',
- 
-    }
-   
-   
-  },
-  methods:{
-    toogleStatus(){
-      if(this.status === 'active'){
-        this.status = 'pending';
+<script setup>
+import { ref } from 'vue';
+
+    const name = ref('Anupa Baral');
+    const status =ref('active');
+    const tasks =ref(['task 1','task 2','task 3']);
+
+    const toggleStatus = () =>{
+      if(status.value === 'active'){
+        status.value = 'pending';
       }
-      else if( this.status === 'pending'){
-        this.status = 'inactive';
+      else if( status.value === 'pending'){
+        status.value = 'inactive';
       }
       else{
-        this.status = 'active';
+        status.value = 'active';
       }
-    }
-  }
-}
+    };
+
+   
+
 </script>
 
 <template>
@@ -43,18 +37,12 @@ export default{
     <li v-for="task in tasks" key="task">{{ task }}</li>
   </ul>
 
-  <!-- dynamic link -->
-  <!-- <a v-bind:href="link">Click for google</a> -->
-<br/>
-  <!-- shortform -->
-  <a :href="link">Click for google</a>
-<br/>
 
 <!-- event hsndling -->
   <!-- <button v-on:click="toogleStatus">Change Status</button> -->
 
   <!-- shortform -->
-  <button @click="toogleStatus">Change Status</button>
+  <button @click="toggleStatus">Change Status</button>
 
   
 </template>

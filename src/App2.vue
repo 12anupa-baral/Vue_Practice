@@ -1,7 +1,32 @@
-<!-- composition api -->
+<!-- option api -->
 
 <script>
-
+export default{
+  data(){
+    return{
+ name:'Anupa Baral',
+ status:'pending',
+ tasks:['task 1','task 2','task 3'],
+ link:'https://google.com',
+ 
+    }
+   
+   
+  },
+  methods:{
+    toggleStatus(){
+      if(this.status === 'active'){
+        this.status = 'pending';
+      }
+      else if( this.status === 'pending'){
+        this.status = 'inactive';
+      }
+      else{
+        this.status = 'active';
+      }
+    }
+  }
+}
 </script>
 
 <template>
@@ -29,7 +54,7 @@
   <!-- <button v-on:click="toogleStatus">Change Status</button> -->
 
   <!-- shortform -->
-  <button @click="toogleStatus">Change Status</button>
+  <button @click="toggleStatus">Change Status</button>
 
   
 </template>
