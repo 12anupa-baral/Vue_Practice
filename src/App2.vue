@@ -1,32 +1,7 @@
-<!-- option api -->
+<!-- composition api -->
 
 <script>
-export default{
-  data(){
-    return{
- name:'Anupa Baral',
- status:'pending',
- tasks:['task 1','task 2','task 3'],
- link:'https://google.com',
- 
-    }
-   
-   
-  },
-  methods:{
-    toogleStatus(){
-      if(this.status === 'active'){
-        this.status = 'pending';
-      }
-      else if( this.status === 'pending'){
-        this.status = 'inactive';
-      }
-      else{
-        this.status = 'active';
-      }
-    }
-  }
-}
+
 </script>
 
 <template>
